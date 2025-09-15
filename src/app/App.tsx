@@ -1,15 +1,13 @@
 
-
-// 1. import `HeroUIProvider` component
-import {Button} from "@heroui/react";
+import NavbarDemo from "../components/shared/NavbarDemo";
+import BodyContent from "../components/shared/BodyContent";
 
 function App() {
-  // 2. Wrap HeroUIProvider at the root of your app
   return (
     <div>
-      <Button color="primary">Click me 🚀</Button>
+      <NavbarDemo></NavbarDemo>
+      <BodyContent/>
     </div>
-      
   );
 }
 
