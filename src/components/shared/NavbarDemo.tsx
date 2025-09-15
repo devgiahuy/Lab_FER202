@@ -1,5 +1,3 @@
-
-
 import {
   Navbar,
   NavbarBrand,
@@ -8,6 +6,7 @@ import {
   Link,
   Button,
 } from "@heroui/react";
+import { useEffect, useState } from "react";
 
 export const AcmeLogo = () => {
   return (
@@ -21,48 +20,112 @@ export const AcmeLogo = () => {
     </svg>
   );
 };
-function NavbarDemo () {
+
+function NavbarDemo() {
+  const [scrolled, setScrolled] = useState(false);
+  const [scrolledS, setScrolledS] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const y = window.scrollY;
+      if (y > 10 && y < 600) {
+        setScrolled(true);
+        setScrolledS(false);
+      } else if (y >= 600) {
+        setScrolled(false);
+        setScrolledS(true);
+      } else {
+        setScrolled(false);
+        setScrolledS(false);
+      }
+      console.log(
+        "scrollY:",
+        y,
+        "scrolled:",
+        scrolled,
+        "scrolledS:",
+        scrolledS
+      );
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const baseClasses = ` transition-all duration-700 ease-in-out
+                      fixed top-0 left-0 w-full z-50
+                      mx-auto
+                   ${scrolled
+                       ? "bg-yellow-900 h-15 justify-between mx-auto max-w-3xl scale-95 "
+                       
+                       : "max-w-7xl scale-100 bg-red-900 h-15"
+                   } 
+                   ${scrolledS ? "bg-red-900" : ""}`;
+
+  const itemClasses = [
+    "flex",
+    "relative",
+    "h-full",
+    "items-center",
+    "data-[active=true]:after:content-['']",
+    "data-[active=true]:after:absolute",
+    "data-[active=true]:after:bottom-0",
+    "data-[active=true]:after:left-0",
+    "data-[active=true]:after:right-0",
+    "data-[active=true]:after:h-[2px]",
+    "data-[active=true]:after:rounded-[2px]",
+    "data-[active=true]:after:bg-primary",
+  ];
+
+
   return (
-    <Navbar shouldHideOnScroll className=" bg-amber-200 opacity-80 rounded-lg ">
-      <NavbarBrand>
-        <AcmeLogo />
-        <p className="font-bold text-inherit">ACME</p>
-      </NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link aria-current="page" href="#">
-            Customers
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
-          </Button>
-        </NavbarItem>
-      </NavbarContent>
-    </Navbar>
-
-
-
-
-
-
-  )
+    <div className={`${scrolled ? "flex justify-center" : ""}`}>
+      <Navbar 
+        classNames={{
+          base: [baseClasses],
+          item: [
+            // dấu gạch chân dưới mục được chọn
+            itemClasses,
+            //
+          ],
+          brand: [],
+        }}
+      >
+        <NavbarBrand>
+          <AcmeLogo />
+          <p className="font-bold text-inherit">ACME</p>
+        </NavbarBrand>
+        <NavbarContent className="hidden sm:flex gap-4" justify="center">
+          <NavbarItem isActive>
+            <Link color="foreground" href="#">
+              Features
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link aria-current="page" href="#" color="foreground">
+              Customers
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link color="foreground" href="#">
+              Integrations
+            </Link>
+          </NavbarItem>
+        </NavbarContent>
+        <NavbarContent justify="end" className={`${scrolled ? "hidden" : ""}`}>
+          <NavbarItem>
+            <Button as={Link} color="primary" href="#" variant="solid">
+              Login
+            </Button>
+          </NavbarItem>
+          <NavbarItem>
+            <Button as={Link} color="primary" href="#" variant="bordered">
+              Sign Up
+            </Button>
+          </NavbarItem>
+        </NavbarContent>
+      </Navbar>
+    </div>
+  );
 }
-
-export default NavbarDemo
+export default NavbarDemo;

@@ -71,6 +71,42 @@ function BodyContent() {
               thêm... Nội dung thêm... Nội dung thêm...
             </p>
           </article>
+
+          <article id="bai5" className="bg-white p-6 rounded-lg shadow">
+            <h2 className="text-2xl font-bold mb-3">Bài viết 5: React.memo</h2>
+            <p className="text-gray-700">
+              React.memo giúp ghi nhớ component, tránh render lại không cần
+              thiết khi props không thay đổi, tối ưu hiệu năng cho app React.
+            </p>
+            <p className="text-gray-600 mt-2">
+              Nội dung thêm... Nội dung thêm... Nội dung thêm... Nội dung
+              thêm... Nội dung thêm... Nội dung thêm...
+            </p>
+          </article>
+
+          <article id="bai5" className="bg-white p-6 rounded-lg shadow">
+            <h2 className="text-2xl font-bold mb-3">Bài viết 5: React.memo</h2>
+            <p className="text-gray-700">
+              React.memo giúp ghi nhớ component, tránh render lại không cần
+              thiết khi props không thay đổi, tối ưu hiệu năng cho app React.
+            </p>
+            <p className="text-gray-600 mt-2">
+              Nội dung thêm... Nội dung thêm... Nội dung thêm... Nội dung
+              thêm... Nội dung thêm... Nội dung thêm...
+            </p>
+          </article>
+
+          <article id="bai5" className="bg-white p-6 rounded-lg shadow">
+            <h2 className="text-2xl font-bold mb-3">Bài viết 5: React.memo</h2>
+            <p className="text-gray-700">
+              React.memo giúp ghi nhớ component, tránh render lại không cần
+              thiết khi props không thay đổi, tối ưu hiệu năng cho app React.
+            </p>
+            <p className="text-gray-600 mt-2">
+              Nội dung thêm... Nội dung thêm... Nội dung thêm... Nội dung
+              thêm... Nội dung thêm... Nội dung thêm...
+            </p>
+          </article>
         </div>
     </div>
   )
