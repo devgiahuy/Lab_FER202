@@ -7,7 +7,7 @@ import {
   Button,
 } from "@heroui/react";
 import { useEffect, useState } from "react";
-import { useNavbarClick } from "../../../hooks/useNavbarClick";
+
 
 export const AcmeLogo = () => {
   return (
@@ -68,21 +68,7 @@ export function NavbarDemo() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
-/*----------------------------------------*/
-// const [isClick, setIsClick] = useState(false);
   
-//   useEffect(() => {
-//     const handleClick = () => {
-//         setIsClick(true);
-//     }
-
-//     window.addEventListener("click", handleClick);
-//     return () => window.removeEventListener("click", handleClick);
-//   },[])
-  
-
-
-
   const baseClasses = `
         transition-all duration-400 ease-in-out
         mt-3 
@@ -117,6 +103,7 @@ export function NavbarDemo() {
     "data-[active=true]:after:bg-primary",
   ];
 
+  /*xử lí navbar */
 const [activeMenu, setActiveMenu] = useState(""); // state lưu menu đang chọn
 
   const menus = [
@@ -124,7 +111,7 @@ const [activeMenu, setActiveMenu] = useState(""); // state lưu menu đang chọ
     { key: "car", label: "Car" },
     { key: "contact", label: "Contact" },
   ];
-
+  /*xử lí navbar */
 
   return (
     <div>

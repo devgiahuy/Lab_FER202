@@ -1,18 +1,27 @@
-import { NavbarDemo } from "../components"
-import BodyContent from "../components/shared/BodyContent"
+// import { NavbarDemo } from "../components"
+// import BodyContent from "../components/shared/BodyContent"
+import LoginDemo from "../components/shared/LoginDemo"
 
-function App() {
-    return (
-        <div>
-            <NavbarDemo />
-            <BodyContent />
-        </div>
-        //     <div className="grid place-items-center h-screen">
-        //     <div className="w-64 h-64 bg-green-500 text-white flex items-center justify-center">
-        //     Căn giữa bằng Grid
-        //   <div>
-        // </div>
-    )
+// function App() {
+//     return (
+//         <div>
+//             {/* <NavbarDemo />
+//             <BodyContent /> */}
+//             <LoginDemo></LoginDemo>
+//         </div>
+//     )
+// }
+
+
+export default function App() {
+
+  return (
+   <div>
+        <LoginDemo></LoginDemo>
+    </div>
+
+
+  );
 }
 
-export default App
+// export default App
