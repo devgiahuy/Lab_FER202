@@ -28,10 +28,12 @@ function NavbarDemo() {
   useEffect(() => {
     const handleScroll = () => {
       const y = window.scrollY;
-      if (y === 0) {
+      if (y >= 0 && y <= 10) {
         setScroledState("default");
+        sethandleHiddenNavbar(false);
       } else if (y > 10 && y <= 500) {
         setScroledState("top");
+        sethandleHiddenNavbar(false);
       } else {
         setScroledState("middle");
         sethandleHiddenNavbar(true);
@@ -41,17 +43,18 @@ function NavbarDemo() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const baseClasses = ` transition-all duration-700 ease-in-out
+  const baseClasses = ` 
+                    bg-red-900 transition-all duration-700 ease-in-out
                       fixed top-0 left-0 w-full z-50
-                      mx-auto
-                      max-w-7xl
+                      mx-auto max-w-7xl
                       ${
                         scrollSate === "top"
-                          ? "bg-yellow-900 h-15 justify-between mx-auto max-w-3xl scale-95"
+                          ? "bg-yellow-900 h-15 justify-between mx-auto max-w-3xl scale-95 "
                           : scrollSate === "middle"
-                            ? "bg-yellow-900 h-15 justify-between mx-auto max-w-3xl scale-95"
-                            : "max-w-7xl scale-100 bg-red-900 h-15"
-                      }`;
+                          ? "bg-yellow-900 h-15 justify-between mx-auto max-w-3xl scale-95"
+                          : "max-w-7xl scale-100 "
+                      }
+                      `;
 
   const itemClasses = [
     "flex",
