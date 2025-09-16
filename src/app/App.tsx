@@ -1,17 +1,15 @@
 import NavbarDemo from "../components/shared/NavbarDemo";
 import BodyContent from "../components/shared/BodyContent";
+import Exam1 from "../components/shared/Exam1";
 
 function App() {
   return (
     <div>
       <NavbarDemo></NavbarDemo>
       <BodyContent />
+      {/* <Exam1></Exam1>
+      <NavbarDemo></NavbarDemo> */}
     </div>
-    //     <div className="grid place-items-center h-screen">
-    //     <div className="w-64 h-64 bg-green-500 text-white flex items-center justify-center">
-    //     Căn giữa bằng Grid
-    //   <div>
-    // </div>
   );
 }
 
