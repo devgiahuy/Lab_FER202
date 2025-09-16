@@ -74,7 +74,7 @@ export function NavbarDemo() {
         mt-3 
         fixed left-0 w-full z-50
         mx-auto max-w-7xl
-        data-[visible=false]:mt-3
+        data-[visible=false]:mt-0
         rounded-3xl
         ${
           isHiddenNavbar
