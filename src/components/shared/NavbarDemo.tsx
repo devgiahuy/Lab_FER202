@@ -22,32 +22,21 @@ export const AcmeLogo = () => {
 };
 
 function NavbarDemo() {
-  const [scrolled, setScrolled] = useState(false);
-  const [scrolledS, setScrolledS] = useState(false);
-
+  type handleNavbar = "default" | "top" | "middle";
+  const [scrollSate, setScroledState] = useState<handleNavbar>("default");
+  const [handleHiddenNavbar, sethandleHiddenNavbar] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       const y = window.scrollY;
-      if (y > 10 && y < 600) {
-        setScrolled(true);
-        setScrolledS(false);
-      } else if (y >= 600) {
-        setScrolled(false);
-        setScrolledS(true);
+      if (y === 0) {
+        setScroledState("default");
+      } else if (y > 10 && y <= 500) {
+        setScroledState("top");
       } else {
-        setScrolled(false);
-        setScrolledS(false);
+        setScroledState("middle");
+        sethandleHiddenNavbar(true);
       }
-      console.log(
-        "scrollY:",
-        y,
-        "scrolled:",
-        scrolled,
-        "scrolledS:",
-        scrolledS
-      );
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -55,12 +44,14 @@ function NavbarDemo() {
   const baseClasses = ` transition-all duration-700 ease-in-out
                       fixed top-0 left-0 w-full z-50
                       mx-auto
-                   ${scrolled
-                       ? "bg-yellow-900 h-15 justify-between mx-auto max-w-3xl scale-95 "
-                       
-                       : "max-w-7xl scale-100 bg-red-900 h-15"
-                   } 
-                   ${scrolledS ? "bg-red-900" : ""}`;
+                      max-w-7xl
+                      ${
+                        scrollSate === "top"
+                          ? "bg-yellow-900 h-15 justify-between mx-auto max-w-3xl scale-95"
+                          : scrollSate === "middle"
+                            ? "bg-yellow-900 h-15 justify-between mx-auto max-w-3xl scale-95"
+                            : "max-w-7xl scale-100 bg-red-900 h-15"
+                      }`;
 
   const itemClasses = [
     "flex",
@@ -77,10 +68,10 @@ function NavbarDemo() {
     "data-[active=true]:after:bg-primary",
   ];
 
-
   return (
-    <div className={`${scrolled ? "flex justify-center" : ""}`}>
-      <Navbar 
+    <div>
+      <Navbar
+        shouldHideOnScroll={handleHiddenNavbar}
         classNames={{
           base: [baseClasses],
           item: [
@@ -112,7 +103,7 @@ function NavbarDemo() {
             </Link>
           </NavbarItem>
         </NavbarContent>
-        <NavbarContent justify="end" className={`${scrolled ? "hidden" : ""}`}>
+        <NavbarContent justify="end">
           <NavbarItem>
             <Button as={Link} color="primary" href="#" variant="solid">
               Login
