@@ -11,12 +11,16 @@
   },
   "dependencies": {
     "@heroui/react": "^2.8.4",
+    "@phosphor-icons/react": "^2.1.10",
     "@tailwindcss/vite": "^4.1.13",
     "axios": "^1.12.2",
+    "formik": "^2.4.6",
     "framer-motion": "^12.23.12",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "tailwindcss": "^4.1.13"
+    "tailwindcss": "^4.1.13",
+    "yub": "^0.11.1",
+    "yup": "^1.7.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
