@@ -1,10 +1,6 @@
 import { Button, Input, Link } from "@heroui/react";
 import React, { useState } from "react";
-import Logo from "../../styled/Logo";
-
 import Forgot from "../../modules/Forgot";
-
-import ButtonGoogle from "../../styled/ButtonGoogle";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { EyeIcon } from "@phosphor-icons/react";
@@ -87,7 +83,7 @@ export default function LoginDemo() {
                     w-125 h-131 max-w-4xs
                    bg-gray-400 rounded-2xl"
       >
-        <Logo/>
+ 
 
         <div className="w-110 mx-auto ">
           <Input className="my-4"
@@ -152,7 +148,7 @@ export default function LoginDemo() {
           </div>
         </div>
 
-        <ButtonGoogle />
+
       </div>
     </div>
   );

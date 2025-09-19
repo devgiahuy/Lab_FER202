@@ -1,13 +1,15 @@
+// "use client";
+import { useEffect, useState } from "react";
 import {
-  Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Link,
+  // Link,
   Button,
 } from "@heroui/react";
-import { useEffect, useState } from "react";
-
+import NavbarStyled from "../../styled/NavbarStyled";
+import { Link } from "react-router-dom";
+// import NavbarStyled from "@/components/styled/NavbarStyled";
 
 export const AcmeLogo = () => {
   return (
@@ -22,7 +24,7 @@ export const AcmeLogo = () => {
   );
 };
 
-export function NavbarDemo() {
+export default function Navbar() {
   type NavbarState = "default" | "top" | "middle";
   const [scrollState, setScroledState] = useState<NavbarState>("default");
   const [isHiddenNavbar, setIsHiddenNavbar] = useState(false);
@@ -68,7 +70,7 @@ export function NavbarDemo() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
-  
+
   const baseClasses = `
         transition-all duration-400 ease-in-out
         mt-3 
@@ -85,8 +87,7 @@ export function NavbarDemo() {
           scrollState === "top" || scrollState === "middle"
             ? "rounded-3xl bg-[#4A9782] opacity-97 justify-between mx-auto max-w-3xl scale-95"
             : "max-w-7xl scale-100"
-        }
-    `;
+        }`;
 
   const itemClasses = [
     "flex",
@@ -104,95 +105,66 @@ export function NavbarDemo() {
   ];
 
   /*xử lí navbar */
-const [activeMenu, setActiveMenu] = useState(""); // state lưu menu đang chọn
+  const [activeMenu, setActiveMenu] = useState(""); // state lưu menu đang chọn
 
   const menus = [
     { key: "home", label: "Home" },
-    { key: "car", label: "Car" },
+    { key: "about", label: "About" },
     { key: "contact", label: "Contact" },
   ];
+
   /*xử lí navbar */
-
   return (
-    <div>
-      <Navbar
-        data-visible={!isHiddenNavbar}
-        classNames={{
-          base: [baseClasses],
-          item: [
-            // dấu gạch chân dưới mục được chọn
-            itemClasses,
-            //
-          ],
-          brand: [],
-        }}
-      >
-        <NavbarBrand>
-          <AcmeLogo />
-          <p className="font-bold text-inherit">ACME</p>
-        </NavbarBrand>
-        <NavbarContent className="hidden sm:flex gap-4" justify="center">
-
-            {/* <NavbarItem isActive>
-              <Link color="foreground" href="#">
-                Home
-              </Link>
-            </NavbarItem>
-          <NavbarItem>
-            <Link aria-current="page" href="#" color="foreground">
-              Car
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link color="foreground" href="#">
-              Contact
-            </Link>
-          </NavbarItem> */}
+    <NavbarStyled
+      data-visible={!isHiddenNavbar}
+      classNames={{
+        base: [baseClasses],
+        item: [
+          // dấu gạch chân dưới mục được chọn
+          itemClasses,
+          //
+        ],
+      }}
+    >
+      <NavbarBrand>
+        <AcmeLogo />
+        <p className="font-bold text-inherit">ACME</p>
+      </NavbarBrand>
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        
+          {menus.map((menu) => (
             
-            {menus.map((menu) => (
             <NavbarItem
-            
               key={menu.key}
               onClick={() => setActiveMenu(menu.key)}
-              isActive={activeMenu == menu.key} 
+              isActive={activeMenu == menu.key}
               as={Link}
-               href="#"
-               className="text-black"
+              className="text-black"
             >
-              
-                {menu.label}
-              
+              <Link to={`/${menu.label}`}>
+              {menu.label}
+              </Link>
             </NavbarItem>
+            
           ))}
-        </NavbarContent>
+        
+      </NavbarContent>
 
-
-        <NavbarContent justify="end">
-          <NavbarItem>
-            <Button
-              as={Link}
-              color="primary"
-              href="#"
-              variant="bordered"
-              className="border-none text-black"
-            >
-              us English
-            </Button>
-          </NavbarItem>
-
-          <NavbarItem>
-            <Button
-              as={Link}
-              color="primary"
-              href="#"
-              variant="solid"
-              className="rounded-3xl bg-[#F5F5F5] opacity-97 text-black"
-            >
-              Login
-            </Button>
-          </NavbarItem>
-        </NavbarContent>
-      </Navbar>
-    </div>
+      <NavbarContent justify="end">
+        <NavbarItem>
+          <Button
+            as={Link}
+            color="primary"
+            href="#"
+            variant="solid"
+            className="rounded-3xl bg-[#F5F5F5] opacity-97 text-black"
+          >
+            <Link to="/login">
+            Login
+            </Link>
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
+    </NavbarStyled>
   );
 }

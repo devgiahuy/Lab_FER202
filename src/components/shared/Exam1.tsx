@@ -1,6 +1,6 @@
 import { Button } from "@heroui/react";
 
-function ex1() {
+function Exam1() {
   const cards = [
     {
       id: 1,
@@ -98,4 +98,4 @@ function ex1() {
   );
 }
 
-export default ex1;
+export default Exam1;
