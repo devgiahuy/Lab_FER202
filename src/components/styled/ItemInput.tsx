@@ -1,4 +1,3 @@
-
 import { Input } from "@heroui/react";
 
 function ItemInput() {
@@ -20,7 +19,7 @@ function ItemInput() {
         />
       </div>
     </>
-  )
+  );
 }
 
-export default ItemInput
+export default ItemInput;
