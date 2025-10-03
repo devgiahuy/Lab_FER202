@@ -1,7 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { ListOfOrchids } from "../../../data/ListOfOrchids";
 import { OrchidCard } from "../../styled";
-import { use, useState } from "react";
+import { useState } from "react";
 import ModalStyled from "../../styled/ModalStyled";
 
 export default function OrchidsList() {
