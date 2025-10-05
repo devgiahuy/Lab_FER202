@@ -1,4 +1,5 @@
 import { Button, Card, CardTitle } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export function OrchidCard({ orchid, handleViewDetail }) {
   return (
@@ -18,7 +19,7 @@ export function OrchidCard({ orchid, handleViewDetail }) {
           Category: {orchid.category} <br />
           Rating: {orchid.rating} ⭐<br />
         </Card.Text>
-        <Button variant="primary">Add</Button>
+        {/* <Button variant="primary">Add</Button> */}
         <Button
           variant="secondary"
           onClick={() => {
@@ -26,7 +27,7 @@ export function OrchidCard({ orchid, handleViewDetail }) {
             handleViewDetail(orchid);
           }}
         >
-          Details
+          <Link to={`detail/${orchid.id}`}>Details</Link>
         </Button>
       </Card.Body>
     </Card>

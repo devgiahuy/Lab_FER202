@@ -3,6 +3,7 @@ import { ListOfOrchids } from "../../../data/ListOfOrchids";
 import { OrchidCard } from "../../styled";
 import { useState } from "react";
 import ModalStyled from "../../styled/ModalStyled";
+import ProductDetail from "../../../pages/ProductDetail";
 
 export default function OrchidsList() {
   const orchids = ListOfOrchids;
@@ -29,7 +30,8 @@ export default function OrchidsList() {
           })}
         </Row>
       </Container>
-      <ModalStyled item={item} />
+      {/* <ModalStyled item={item} /> */}
+      {/* <ProductDetail item={item} /> */}
     </div>
   );
 }
