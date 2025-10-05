@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import OrchidsList from "../components/share/CardList";
+import OrchidsCardList from "../components/share/OrchidCardList";
 
 export default function HomePage() {
   return (
     <div>
-      <h1>Home Page</h1>
-      <OrchidsList />
-      <Link to="detail/1">Xem sản phẩm 1</Link>
+      <h1 className="mb-4 text-center">🌸 Orchid Shop</h1>
+      <OrchidsCardList />
     </div>
   );
 }

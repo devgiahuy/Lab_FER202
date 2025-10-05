@@ -12,6 +12,7 @@ export const ListOfOrchids = [
     numberOfLike: 192,
     origin: "Taiwan",
     category: "Cattleya",
+    price: 500000,
   },
   {
     id: "2",
@@ -25,6 +26,7 @@ export const ListOfOrchids = [
     numberOfLike: 250,
     origin: "Thailand",
     category: "Phalaenopsis",
+    price: 100000,
   },
   {
     id: "3",
@@ -38,6 +40,7 @@ export const ListOfOrchids = [
     numberOfLike: 310,
     origin: "Japan",
     category: "Dendrobium",
+    price: 300000,
   },
   {
     id: "4",
@@ -51,6 +54,7 @@ export const ListOfOrchids = [
     numberOfLike: 145,
     origin: "India",
     category: "Vanda",
+    price: 700000,
   },
   {
     id: "5",
@@ -64,6 +68,7 @@ export const ListOfOrchids = [
     numberOfLike: 280,
     origin: "China",
     category: "Cymbidium",
+    price: 900000,
   },
   {
     id: "6",
@@ -77,6 +82,7 @@ export const ListOfOrchids = [
     numberOfLike: 98,
     origin: "Brazil",
     category: "Miltonia",
+    price: 1500000,
   },
   {
     id: "7",
@@ -90,6 +96,7 @@ export const ListOfOrchids = [
     numberOfLike: 400,
     origin: "Mexico",
     category: "Oncidium",
+    price: 5400000,
   },
   {
     id: "8",
@@ -103,6 +110,7 @@ export const ListOfOrchids = [
     numberOfLike: 210,
     origin: "Vietnam",
     category: "Paphiopedilum",
+    price: 1100000,
   },
   {
     id: "9",
@@ -116,6 +124,7 @@ export const ListOfOrchids = [
     numberOfLike: 175,
     origin: "Central America",
     category: "Brassavola",
+    price: 1300000,
   },
   {
     id: "10",
@@ -129,6 +138,7 @@ export const ListOfOrchids = [
     numberOfLike: 500,
     origin: "Brazil",
     category: "Cattleya",
+    price: 500000,
   },
   {
     id: "11",
@@ -142,6 +152,7 @@ export const ListOfOrchids = [
     numberOfLike: 122,
     origin: "Caribbean",
     category: "Encyclia",
+    price: 2500000,
   },
   {
     id: "12",
@@ -155,6 +166,7 @@ export const ListOfOrchids = [
     numberOfLike: 350,
     origin: "Brazil",
     category: "Laelia",
+    price: 6500000,
   },
   {
     id: "13",
@@ -168,6 +180,7 @@ export const ListOfOrchids = [
     numberOfLike: 87,
     origin: "South America",
     category: "Zygopetalum",
+    price: 1500000,
   },
   {
     id: "14",
@@ -181,6 +194,7 @@ export const ListOfOrchids = [
     numberOfLike: 198,
     origin: "Himalaya",
     category: "Coelogyne",
+    price: 2500000,
   },
   {
     id: "15",
@@ -193,6 +207,7 @@ export const ListOfOrchids = [
     numberOfLike: 275,
     origin: "Peru",
     category: "Masdevallia",
+    price: 4500000,
   },
   {
     id: "16",
@@ -206,5 +221,6 @@ export const ListOfOrchids = [
     numberOfLike: 220,
     origin: "Guatemala",
     category: "Lycaste",
+    price: 2000000,
   },
 ];

@@ -1,17 +1,12 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { ListOfOrchids } from "../../../data/ListOfOrchids";
-import { OrchidCard } from "../../styled";
-import { useState } from "react";
-import ModalStyled from "../../styled/ModalStyled";
-import ProductDetail from "../../../pages/ProductDetail";
+import OrchidCard from "../../styled/OrchidCard";
 
-export default function OrchidsList() {
+export default function OrchidsCardList() {
   const orchids = ListOfOrchids;
-  const [item, setItem] = useState([]);
   return (
-    <div className="d-flex justify-content-center items-center ">
+    <div className="d-flex justify-content-center items-center">
       <Container className="my-4 d-flex flex-column">
-        <h2 className="mb-4 text-center">Orchid Shop</h2>
         <Row>
           {orchids.map((orchid) => {
             // console.log(orchid);
@@ -24,14 +19,12 @@ export default function OrchidsList() {
                 lg={3}
                 className="mb-4"
               >
-                <OrchidCard orchid={orchid} handleViewDetail={setItem} />
+                <OrchidCard orchid={orchid} />
               </Col>
             );
           })}
         </Row>
       </Container>
-      {/* <ModalStyled item={item} /> */}
-      {/* <ProductDetail item={item} /> */}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { TypeAnimation } from "react-type-animation";
 
-export const TypeAnimationStyled = () => {
+export default const TypeAnimationStyled = () => {
   return (
     <TypeAnimation
       sequence={[

@@ -1,16 +1,22 @@
 import { Button, Card, CardTitle } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { setSelectedOrchid } from "../../../features/selectOrchidSlice";
 
-export function OrchidCard({ orchid, handleViewDetail }) {
+export default function OrchidCard({ orchid }) {
+  const dispatch = useDispatch();
+
   return (
-    <Card className="h-100 shadow-sm">
-      <Card.Img
-        variant="top"
-        src={orchid.image}
-        alt={orchid.name}
-        className="img-fluid object-fit-contain"
-        style={{ maxHeight: "200px", objectFit: "cover" }}
-      />
+    <Card className="h-100 shadow-sm border-1 rounded-3">
+      <div className="overflow-hidden m-3 " style={{ height: "200px" }}>
+        <Card.Img
+          variant="top"
+          src={orchid.image}
+          alt={orchid.name}
+          className="w-100 h-100 object-fit-cover rounded-3 shadow-lg"
+        />
+      </div>
+
       <Card.Body>
         <Card.Title>{orchid.name}</Card.Title>
         <Card.Text>
@@ -20,15 +26,20 @@ export function OrchidCard({ orchid, handleViewDetail }) {
           Rating: {orchid.rating} ⭐<br />
         </Card.Text>
         {/* <Button variant="primary">Add</Button> */}
-        <Button
-          variant="secondary"
-          onClick={() => {
-            console.log(orchid);
-            handleViewDetail(orchid);
-          }}
-        >
-          <Link to={`detail/${orchid.id}`}>Details</Link>
-        </Button>
+        <div className="d-flex justify-content-end">
+          <Button
+            as={Link}
+            to={`detail/${orchid.id}`}
+            className=" bg-success text-white border"
+            // variant="primary"
+            onClick={() => {
+              console.log(orchid);
+              dispatch(setSelectedOrchid(orchid));
+            }}
+          >
+            View detail
+          </Button>
+        </div>
       </Card.Body>
     </Card>
   );

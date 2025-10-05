@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
-const DarkOrWhite = () => {
+export const DarkOrWhite = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const toggleMode = () => {
     setIsDarkMode(!isDarkMode);
@@ -21,5 +21,3 @@ const DarkOrWhite = () => {
     </div>
   );
 };
-
-export default DarkOrWhite;

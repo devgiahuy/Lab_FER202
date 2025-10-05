@@ -1,3 +1,3 @@
-export * from "./TypeAnimationStyled";
-export * from "./OrchidCard";
-export * from "./ModalStyled";
+// export * from "./TypeAnimationStyled";
+// export * from "./OrchidCard";
+// export * from "./ModalStyled";
