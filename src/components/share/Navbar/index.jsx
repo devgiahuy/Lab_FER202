@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ThemeToggle from "../ThemToggle";
+import { DarkOrWhite } from "../DarkOrWhite";
 
 export default function Navbar() {
   return (
@@ -9,6 +11,10 @@ export default function Navbar() {
           <Link to="/" className="navbar-brand">
             Orchid shop
           </Link>
+          <div className="ms-auto">
+            {/* <ThemeToggle /> */}
+            <DarkOrWhite />
+          </div>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
