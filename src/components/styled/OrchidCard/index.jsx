@@ -30,7 +30,8 @@ export default function OrchidCard({ orchid }) {
           <Button
             as={Link}
             to={`detail/${orchid.id}`}
-            className=" bg-success text-white border"
+            className=" text-white border"
+            style={{ background: "#3a7055ff" }}
             // variant="primary"
             onClick={() => {
               console.log(orchid);

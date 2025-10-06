@@ -2,7 +2,15 @@ import React from "react";
 
 export default function AboutPage() {
   return (
-    <div className="container my-5 p-4 bg-white rounded shadow-sm">
+    <div
+      className="container my-5   rounded shadow-sm"
+      style={{
+        backgroundColor: "#F4F4F4",
+        marginTop: "40px",
+        maxWidth: "1440px",
+        minHeight: "200px",
+      }}
+    >
       <div className="text-center mb-5">
         <h2 className="fw-bold text-success">🌿 Về Chúng Tôi</h2>
         <p className="text-secondary fs-5">
@@ -23,7 +31,6 @@ export default function AboutPage() {
               maxHeight: "400px",
               maxWidth: "420px",
               objectFit: "contain",
-              padding: "0vh",
             }}
           />
         </div>

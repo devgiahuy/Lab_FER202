@@ -2,9 +2,17 @@ import React from "react";
 
 export default function ContactPage() {
   return (
-    <div className="container my-5 p-4 bg-white rounded shadow-sm">
+    <div
+      className="container my-5 p-4 rounded shadow-sm"
+      style={{
+        backgroundColor: "#F4F4F4",
+        marginTop: "40px",
+        maxWidth: "1440px",
+        minHeight: "200px",
+      }}
+    >
       <div className="text-center mb-5">
-        <h2 className="fw-bold text-success">📬 Liên Hệ Với Chúng Tôi</h2>
+        <h2 className="fw-bold text-success">Liên Hệ Với Chúng Tôi</h2>
         <p className="text-secondary">
           Hãy để lại thông tin, chúng tôi sẽ phản hồi trong thời gian sớm nhất.
         </p>
@@ -34,7 +42,7 @@ export default function ContactPage() {
                 type="email"
                 className="form-control"
                 id="email"
-                placeholder="name@example.com"
+                placeholder="name@gmail.com"
               />
             </div>
 
@@ -59,18 +67,18 @@ export default function ContactPage() {
         {/* Thông tin liên hệ bên phải */}
         <div className="col-md-6">
           <div className="bg-light p-4 rounded h-100 d-flex flex-column justify-content-center">
-            <h5 className="text-success fw-bold mb-3">🌸 Thông Tin Liên Hệ</h5>
+            <h5 className="text-success fw-bold mb-3">🌿 Thông Tin Liên Hệ</h5>
             <p className="mb-2">
               <i className="bi bi-geo-alt-fill text-success me-2"></i>
-              123 Orchid Street, Đà Nẵng, Việt Nam
+              123 Orchid Street, TP.HCM, Việt Nam
             </p>
             <p className="mb-2">
               <i className="bi bi-telephone-fill text-success me-2"></i>
-              (+84) 987 654 321
+              (+84) 123 321 345
             </p>
             <p className="mb-3">
               <i className="bi bi-envelope-fill text-success me-2"></i>
-              support@orchidshop.vn
+              orchid.support@gmail.com
             </p>
 
             <div className="d-flex gap-3 mt-2">

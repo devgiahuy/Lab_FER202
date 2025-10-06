@@ -1,12 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ThemeToggle from "../ThemToggle";
-import { DarkOrWhite } from "../DarkOrWhite";
+import DarkOrWhite from "../DarkOrWhite";
+// import ThemeToggle from "../ThemToggle";
 
 export default function Navbar() {
   return (
-    <div style={{}}>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div className="mb-4">
+      <nav
+        className="navbar navbar-expand-lg navbar-dark fixed-top"
+        style={{
+          background: "#3a7055ff",
+          height: "60px",
+        }}
+      >
         <div className="container">
           <Link to="/" className="navbar-brand">
             Orchid shop

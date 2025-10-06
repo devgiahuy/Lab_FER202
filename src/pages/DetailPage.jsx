@@ -20,11 +20,21 @@ export default function DetailPage() {
 
   return (
     <div
-      className="container my-5 "
-      style={{ backgroundColor: "#F4F4F4", marginTop: 10 }}
+      className="container rounded"
+      style={{
+        backgroundColor: "#F4F4F4",
+        marginTop: "40px",
+        maxWidth: "1440px",
+        minHeight: "200px",
+      }}
     >
+      <div>
+        <h2 className="fs-1" style={{ padding: "30px" }}>
+          Thông tin chi tiết
+        </h2>
+      </div>
       <div className="row g-4 align-items-center">
-        {/* Picture */}
+        {/* picture */}
         <div className="col-lg-6 col-md-6 col-sm-12 text-center">
           <Card className="border-2 shadow-md m-3">
             <Card.Img
@@ -40,13 +50,13 @@ export default function DetailPage() {
           </Card>
         </div>
 
-        {/* Description */}
+        {/* des*/}
         <div className="col-lg-6 col-md-6 col-sm-12 rounded h-100 w-50">
           <h2 className="fw-bold mb-3 text-dark">{orchid.name}</h2>
 
           <h4 className="text-success fw-bold mb-3">
             {(orchid.price ?? 590000).toLocaleString()} VNĐ
-            <small className="text-muted fs-6 fw-normal">/bông</small>
+            <small className="text-muted fs-6 fw-normal">/Cây</small>
           </h4>
 
           <div className="bg-light rounded px-3 py-2 d-inline-block mb-3">
@@ -79,51 +89,40 @@ export default function DetailPage() {
               </div>
               <div className="col-6">
                 <i className="bi bi-tree-fill text-success me-2"></i>
-                <b>Đặc biệt:</b> {orchid.isSpecial ? "Có" : "Không"}
+                <b>Đột biến:</b> {orchid.isSpecial ? "Có" : "Không"}
               </div>
             </div>
           </div>
 
-          {/* Nút đặt */}
+          {/* button */}
           <div className="d-flex gap-3">
             <button className="btn btn-success flex-grow-1 py-2 fw-semibold">
-              🌸 Đặt Mua Ngay
+              Đặt Mua Ngay
             </button>
             <Link to="/" className="btn btn-outline-secondary fw-semibold px-4">
-              ← Quay lại
+              Quay lại
             </Link>
           </div>
         </div>
       </div>
 
-      {/* <div className=" d-flex justify-contain-center align-items-center">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/VVQ0p-9PdWM?si=8XakEDEJp0bD4K_N"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </div> */}
-
+      <div>
+        <h2 className="fs-4" style={{ marginTop: "40px" }}>
+          Video miêu tả
+        </h2>
+      </div>
       <div
         className="d-flex justify-content-center align-items-center"
         style={{
-          minHeight: "60vh", // 👈 cao bằng 60% màn hình
+          minHeight: "60vh",
         }}
       >
         <div
           className="shadow-lg rounded overflow-hidden"
           style={{
             width: "560px",
-            height: "315px",
-            border: "6px solid #fff",
-            boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
-            borderRadius: "16px",
-            overflow: "hidden",
+            height: "400px",
+            border: "4px solid #fff",
           }}
         >
           <iframe
