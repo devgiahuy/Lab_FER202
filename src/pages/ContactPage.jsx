@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function ContactPage() {
   return (
@@ -82,15 +83,15 @@ export default function ContactPage() {
             </p>
 
             <div className="d-flex gap-3 mt-2">
-              <a href="#" className="text-success fs-4">
+              <Link href="#" className="text-success fs-4">
                 <i className="bi bi-facebook"></i>
-              </a>
-              <a href="#" className="text-success fs-4">
+              </Link>
+              <Link href="#" className="text-success fs-4">
                 <i className="bi bi-instagram"></i>
-              </a>
-              <a href="#" className="text-success fs-4">
+              </Link>
+              <Link href="#" className="text-success fs-4">
                 <i className="bi bi-youtube"></i>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

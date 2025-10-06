@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function FooterOrchide() {
   return (
@@ -26,33 +27,33 @@ export default function FooterOrchide() {
             <h6 className="fw-semibold">Liên kết nhanh</h6>
             <ul className="list-unstyled">
               <li>
-                <a href="/" className="text-decoration-none text-secondary">
+                <Link href="/" className="text-decoration-none text-secondary">
                   Trang chủ
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/about"
                   className="text-decoration-none text-secondary"
                 >
                   Giới thiệu
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/products"
                   className="text-decoration-none text-secondary"
                 >
                   Sản phẩm
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/contact"
                   className="text-decoration-none text-secondary"
                 >
                   Liên hệ
-                </a>
+                </Link>
               </li>
             </ul>
           </Col>
@@ -61,15 +62,15 @@ export default function FooterOrchide() {
           <Col md={4} sm={6}>
             <h6 className="fw-semibold">Mạng xã hội</h6>
             <div className="d-flex gap-3 fs-5">
-              <a href="#" className="text-success">
+              <Link href="#" className="text-success mt-1">
                 <i className="bi bi-facebook"></i>
-              </a>
-              <a href="#" className="text-success">
+              </Link>
+              <Link href="#" className="text-success mt-1">
                 <i className="bi bi-instagram"></i>
-              </a>
-              <a href="#" className="text-success fs-4">
+              </Link>
+              <Link href="#" className="text-success fs-4 ">
                 <i className="bi bi-youtube"></i>
-              </a>
+              </Link>
             </div>
           </Col>
         </Row>
