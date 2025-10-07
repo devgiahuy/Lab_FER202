@@ -6,60 +6,90 @@ export default function NavbarBA() {
   return (
     <div className="mb-4">
       <nav
-        className="navbar navbar-expand-lg fs-5 fixed-top "
+        className="navbar navbar-expand-lg shadow-sm fixed-top border-bottom"
         style={{
-          background: "#3a7055ff",
-          height: "60px",
+          backgroundColor: "var(--bs-body-bg)",
+          transition: "all 0.3s ease",
         }}
       >
-        <div className="container-fluid">
-          <Link className="navbar-brand fw-semibold fs-4 " href="/" style={{}}>
-            🌿 Orchid Shop
+        <div className="container-fluid px-4">
+          {/* LOGO */}
+          <Link
+            className="navbar-brand fw-bold fs-4 text-success d-flex align-items-center gap-2"
+            to="/home"
+          >
+            🌿 <span>Orchide</span>
           </Link>
+
+          {/* TOGGLER (mobile menu) */}
           <button
-            className="navbar-toggler"
+            className="navbar-toggler border-0"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+
+          {/* NAV LINKS */}
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav mx-auto gap-lg-4">
               <li className="nav-item">
-                <Link to="/" className="nav-link">
+                <Link className="nav-link fw-semibold text-success" to="/home">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/about" className="nav-link">
+                <Link
+                  className="nav-link fw-semibold text-success"
+                  to="/natural"
+                >
+                  Natural
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link fw-semibold text-success" to="/about">
                   About
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/contact" className="nav-link">
+                <Link
+                  className="nav-link fw-semibold text-success"
+                  to="/contact"
+                >
                   Contact
                 </Link>
               </li>
             </ul>
-            <div className="ms-auto">
-              {/* <ThemeToggle /> */}
+
+            {/* DARK MODE SWITCH */}
+            <div className="d-flex align-items-center gap-3">
               <DarkOrWhite />
+
+              {/* SEARCH BAR */}
+              <form className="d-flex" role="search">
+                <input
+                  className="form-control me-2 rounded-pill px-3"
+                  type="search"
+                  placeholder="Search..."
+                  aria-label="Search"
+                  style={{
+                    border: "1px solid #84a98c",
+                    backgroundColor: "var(--bs-body-bg)",
+                    color: "var(--bs-body-color)",
+                  }}
+                />
+                <button
+                  className="btn btn-success rounded-pill px-3"
+                  type="submit"
+                >
+                  <i className="bi bi-search"></i>
+                </button>
+              </form>
             </div>
-            <form className="d-flex p-2" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
           </div>
         </div>
       </nav>

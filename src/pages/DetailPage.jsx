@@ -1,72 +1,76 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { useParams, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 
 export default function DetailPage() {
-  const { id } = useParams();
   const orchid = useSelector((state) => state.selectedOrchid.current);
 
   if (!orchid) {
     return (
-      <div className="text-center py-5">
-        <p className="text-danger">Không tìm thấy dữ liệu cho id: {id}</p>
-        <Link to="/home" className="btn btn-outline-primary">
-          ← Quay lại danh sách
+      <div className="container text-center py-5">
+        <h4 className="text-secondary">Không tìm thấy thông tin hoa lan 🌸</h4>
+        <Link to="/home" className="btn btn-success mt-3">
+          Quay lại trang chủ
         </Link>
       </div>
     );
   }
 
   return (
-    <div
-      className="container rounded"
+    <section
+      className="container rounded-4 shadow-sm py-5 my-5 px-4"
       style={{
-        backgroundColor: "#F4F4F4",
-        marginTop: "40px",
-        maxWidth: "1440px",
-        minHeight: "200px",
+        background: "linear-gradient(180deg, #e8f3ec 0%, #ffffff 100%)",
+        maxWidth: "1200px",
       }}
     >
-      <div>
-        <h2 className="fs-1" style={{ padding: "30px" }}>
-          Thông tin chi tiết
-        </h2>
+      {/* Tiêu đề */}
+      <div className="text-center mb-5">
+        <h2 className="fw-bold text-success">🌸 Thông tin chi tiết</h2>
+        <p className="text-muted">
+          Tất cả những gì bạn cần biết về loài lan này
+        </p>
       </div>
+
       <div className="row g-4 align-items-center">
-        {/* picture */}
+        {/* Hình ảnh */}
         <div className="col-lg-6 col-md-6 col-sm-12 text-center">
-          <Card className="border-2 shadow-md m-3">
+          <Card className="border-0 shadow-sm rounded-4 p-3 bg-white">
             <Card.Img
               src={orchid.image}
               alt={orchid.name}
-              className="img-fluid rounded-3"
+              className="img-fluid rounded-4"
               style={{
                 maxHeight: "420px",
                 objectFit: "contain",
-                padding: "1rem",
+                transition: "transform 0.4s ease",
               }}
+              onMouseOver={(e) =>
+                (e.currentTarget.style.transform = "scale(1.04)")
+              }
+              onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
             />
           </Card>
         </div>
 
-        {/* des*/}
-        <div className="col-lg-6 col-md-6 col-sm-12 rounded h-100 w-50">
-          <h2 className="fw-bold mb-3 text-dark">{orchid.name}</h2>
+        {/* Thông tin mô tả */}
+        <div className="col-lg-6 col-md-6 col-sm-12">
+          <h2 className="fw-bold mb-3 text-success">{orchid.name}</h2>
 
-          <h4 className="text-success fw-bold mb-3">
-            {(orchid.price ?? 590000).toLocaleString()} VNĐ
-            <small className="text-muted fs-6 fw-normal">/Cây</small>
+          <h4 className="text-dark fw-bold mb-3">
+            {(orchid.price ?? 590000).toLocaleString()} VNĐ{" "}
+            <small className="text-muted fs-6 fw-normal">/ Cây</small>
           </h4>
 
-          <div className="bg-light rounded px-3 py-2 d-inline-block mb-3">
+          {/* <div className="bg-light rounded-pill px-4 py-2 d-inline-block mb-3 shadow-sm">
             <small className="text-secondary">
               Miễn phí vận chuyển toàn quốc
             </small>
-          </div>
+          </div> */}
 
-          <div className="border rounded-3 p-3 mb-4">
-            <div className="row gy-2">
+          <div className="border rounded-4 p-4 mb-4 bg-white shadow-sm">
+            <div className="row gy-3">
               <div className="col-6">
                 <i className="bi bi-geo-alt-fill me-2 text-success"></i>
                 <b>Nguồn gốc:</b> {orchid.origin}
@@ -89,59 +93,55 @@ export default function DetailPage() {
               </div>
               <div className="col-6">
                 <i className="bi bi-tree-fill text-success me-2"></i>
-                <b>Đột biến:</b> {orchid.isSpecial ? "Có" : "Không"}
+                <b>Đặc biệt:</b> {orchid.isSpecial ? "Có" : "Không"}
               </div>
             </div>
           </div>
 
-          {/* button */}
-          <div className="d-flex gap-3">
-            <button className="btn btn-success flex-grow-1 py-2 fw-semibold">
+          {/* Buttons */}
+          <div className="d-flex flex-wrap gap-3">
+            <button className="btn btn-success flex-grow-1 py-2 fw-semibold rounded-pill shadow-sm">
               Đặt Mua Ngay
             </button>
-            <Link to="/" className="btn btn-outline-secondary fw-semibold px-4">
+            <Link
+              to="/home"
+              className="btn btn-outline-success fw-semibold px-4 rounded-pill"
+            >
               Quay lại
             </Link>
           </div>
         </div>
       </div>
 
-      <div>
-        <h2 className="fs-4" style={{ marginTop: "40px" }}>
-          Video miêu tả
-        </h2>
-      </div>
-      <div
-        className="d-flex justify-content-center align-items-center"
-        style={{
-          minHeight: "60vh",
-        }}
-      >
-        <div
-          className="shadow-lg rounded overflow-hidden"
-          style={{
-            width: "560px",
-            height: "400px",
-            border: "4px solid #fff",
-          }}
-        >
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/VVQ0p-9PdWM?si=8XakEDEJp0bD4K_N"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
+      {/* Video */}
+      <div className="mt-5 pt-4 border-top">
+        <h4 className="fw-semibold text-success mb-3 text-center">
+          🎥 Video mô tả chi tiết
+        </h4>
+        <div className="d-flex justify-content-center align-items-center">
+          <div
+            className="shadow-lg rounded-4 overflow-hidden border border-success-subtle"
             style={{
-              width: "100%",
-              height: "100%",
-              display: "block",
+              width: "560px",
+              height: "315px",
+              maxWidth: "100%",
             }}
-          ></iframe>
+          >
+            <iframe
+              src={orchid.linkVideo}
+              title="Orchid Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{
+                width: "100%",
+                height: "100%",
+                display: "block",
+              }}
+            ></iframe>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

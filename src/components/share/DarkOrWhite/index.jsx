@@ -6,7 +6,7 @@ export default function DarkOrWhite() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    document.body.style.backgroundColor = isDarkMode ? "#26382dff" : "#ffffff";
+    document.body.style.backgroundColor = isDarkMode ? "#e8f3ec" : "#ffffff";
     // document.body.style.color = isDarkMode ? "#f8f9fa" : "#212529";
   }, [isDarkMode]);
 

@@ -1,11 +1,10 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
 import { ListOfOrchids } from "../../../data/ListOfOrchids";
+import { Container, Row, Col } from "react-bootstrap";
 import OrchidCard from "../../styled/OrchidCard";
 
-export default function OrchidsCardList() {
-  const orchids = ListOfOrchids;
-
+export default function NaturalCardList() {
+  const orchids = ListOfOrchids.filter((val) => val.isSpecial === true);
   return (
     <section
       className="py-5"
@@ -17,7 +16,9 @@ export default function OrchidsCardList() {
       <Container>
         {/* Tiêu đề */}
         <div className="text-center mb-5">
-          <h2 className="fw-bold text-success">🌸 Our Orchids Collection</h2>
+          <h2 className="fw-bold text-success">
+            🌸 Natural Orchids Collection
+          </h2>
           <p className="text-muted">
             Discover the natural beauty of Orchide – pure, vibrant, and unique.
           </p>
