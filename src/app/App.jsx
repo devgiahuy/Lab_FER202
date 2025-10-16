@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet, Link } from "react-router-dom";
 import NavbarBA from "../components/share/NavbarBS";
 import FooterOrchide from "../components/share/Footer";
+import DemoFormikForm from "../components/share/Demo/demoFormikForm";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Outlet />
       </div>
       <FooterOrchide />
+      <DemoFormikForm />
     </div>
   );
 }
