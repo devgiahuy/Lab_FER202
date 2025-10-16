@@ -1,8 +1,8 @@
-:root {
-  --bs-primary: #16a34a;
-  --bs-secondary: #facc15;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body {
-  background-color: #f8f9fa;
+/* (tùy chọn) custom thêm hiệu ứng hoặc theme riêng */
+html {
+  scroll-behavior: smooth;
 }

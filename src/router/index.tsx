@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "../app/App.jsx";
-import HomePage from "../pages/HomePage.jsx";
-import AboutPage from "../pages/AboutPage.jsx";
+import App from "../app/App.js";
+import HomePage from "../pages/HomePage.js";
+import AboutPage from "../pages/AboutPage.js";
 // import NotFound from "../pages/NotFound.jsx";
-import ContactPage from "../pages/ContactPage.jsx";
-import DetailPage from "../pages/DetailPage.jsx";
-import NaturalPage from "../pages/Natural.jsx";
+import ContactPage from "../pages/ContactPage.js";
+import DetailPage from "../pages/DetailPage.js";
+import NaturalPage from "../pages/Natural.js";
 
 export const router = createBrowserRouter([
   {

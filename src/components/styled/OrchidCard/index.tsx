@@ -47,7 +47,7 @@ import React from "react";
 import { Button, Card } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { setSelectedOrchid } from "../../../features/selectOrchidSlice";
+import { setSelectedOrchid } from "../../../features/selectOrchidSlice.js";
 
 export default function OrchidCard({ orchid }) {
   const dispatch = useDispatch();

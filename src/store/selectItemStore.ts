@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import selectedOrchidReducer from "../features/selectOrchidSlice";
+import selectedOrchidReducer from "../features/selectOrchidSlice.js";
 
 const STORAGE_KEY = "orchidStore"; // key để lưu vào localStorage
 

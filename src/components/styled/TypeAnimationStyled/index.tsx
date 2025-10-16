@@ -1,6 +1,6 @@
 import { TypeAnimation } from "react-type-animation";
 
-export default const TypeAnimationStyled = () => {
+export default function TypeAnimationStyled() {
   return (
     <TypeAnimation
       sequence={[
@@ -19,4 +19,4 @@ export default const TypeAnimationStyled = () => {
       //   repeat={Infinity}
     />
   );
-};
+}
